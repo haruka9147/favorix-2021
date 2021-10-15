@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{REQUEST_URI} !\.(css|js|jpg|png|gif|svg)$
+  RewriteRule ^([^/]+)/([^/]+)/.+ $1/$2/ [R]
+
+  RewriteCond %{REQUEST_URI} !\.(css|js|jpg|png|gif|svg)$
+  RewriteRule ^([^/]+)/([^/]+)/ shop.php?area=$1&shop=$2 [L]
+
+  RewriteCond %{REQUEST_URI} !\.(css|js|jpg|png|gif|svg)$
+  RewriteRule ^([^/]+)/ shop.php?area=$1 [L]
+</IfModule>
